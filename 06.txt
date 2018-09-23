@@ -1,0 +1,12 @@
+note left of Kayttaja
+ Kayttaja tayttaa input-kentan 
+ ja paintaa talleta painiketta
+end note
+Kayttaja->Selain:
+note left of Selain
+ Selain poimii input-formista uuden muistiinpanon ja
+ lisaa sen muistiinpanojen listaan. Selain piirtaa
+ uuden muistiinpanojen listan. Selain postaa
+ muistiinpanon Json-muodossa myos palvelimelle talteen.
+end note
+Selain->Palvelin:https://fullstack-exampleapp.herokuapp.com/new_note_spa

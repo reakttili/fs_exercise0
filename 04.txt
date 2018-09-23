@@ -1,0 +1,21 @@
+note left of Kayttaja
+ Kayttaja tayttaa input-kentan 
+ ja paintaa talleta painiketta
+end note
+Kayttaja->Selain:
+note left of Selain
+ Selain tekee post:in palvelimelle ja 
+ submit-formista poimitaan lisatty
+ muistiinpano.
+end note
+Selain->Palvelin:https://fullstack-exampleapp.herokuapp.com/new_note
+note left of Palvelin
+ Palvelin paivittaa muistiinpanot ja lahettaa uudelleenohjauspyynnon 
+ selaimelle.
+end note
+Palvelin->Selain: status 302
+note left of Selain
+ Uudelleen ohjauspyynnon ansiosta selain hakee palvelimen muuttuneet 
+ muistiinpanot kuten aikaisemmassa tehtavassa.
+end note
+Selain->Palvelin:https://fullstack-exampleapp.herokuapp.com/notes

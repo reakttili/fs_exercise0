@@ -1,0 +1,27 @@
+﻿note left of Kayttaja
+ Kayttaja kirjottaa osoiteriville
+ https://fullstack-exampleapp.herokuapp.com/notes.
+end note
+Kayttaja->Selain:
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+note left of Palvelin
+ Muodostetaan html, jolla voi lisätä uusia muistiinpanoja.
+end note
+Palvelin->Selain: status 200
+note left of Selain
+ Selain pyytää palvelimelta html:ssä mainitut css- ja js-tiedostot. 
+end note
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain: status 200
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+Palvelin->Selain: status 200
+note left of Selain
+ Selain suorittaa js-tiedoston. Js-tiedoston koodi lataa json-datana
+ palvelimelta muistiinpanot. 
+end note
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+Palvelin->Selain: status 200
+note left of Selain
+ Js-tiedoston koodi muokkaa selaimessa aikaisemmin ladattua html:ää ja lisää
+ siihen muistiinpanot.
+end note
